@@ -42,7 +42,7 @@ class Repo:
             self.cogs[cog_name] = Cog(cog_name, self, cog_raw)
 
     def build_embed(self, *, prefix="[p]", is_owner=False):
-        em = discord.Embed(url=self.url, description=self.description, colour=discord.Colour.red())
+        em = discord.Embed(url=self.url, description=self.description, colour=10664439)
         em.set_author(name=f"{self.name} by {', '.join(self.author)}")
         em.add_field(name="Type", value=self.rx_category, inline=True)
         if self.rx_branch:
@@ -86,7 +86,7 @@ class Cog:
             description = self.description
         else:
             description = self.short
-        em = discord.Embed(url=url, description=description, colour=discord.Colour.red())
+        em = discord.Embed(url=url, description=description, colour=10664439)
         em.set_author(name=f"{self.name} from {self.repo.name}")
         em.add_field(name="Type", value=self.repo.rx_category, inline=True)
         em.add_field(name="Author", value=f"{', '.join(self.author)}", inline=True)
